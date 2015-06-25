@@ -2,16 +2,23 @@
 var increment = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Number(work[0].innerHTML) + 1;
+  stopMetronome();
+  runMetronome();
 }
 
 // decreases the speed of the metronome
 var decrement = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 1, 1);
+  stopMetronome();
+  runMetronome();
 }
+
 
 // adds class to div to simulate blink of metronome
 var addFlash = function(){
+  var sound = new Audio("beat.wav");
+  sound.play();
   var work = document.getElementsByClassName("flashingLight");
   work[0].classList.add("darkened");
 }
@@ -22,20 +29,35 @@ var takeFlash = function(){
   work[0].className = work[0].className.replace(/\bdarkened\b/,'');
 }
 
+// 
 var pulse = function(){
   addFlash();
   window.setTimeout(takeFlash, 100);
 }
 
 var blink;
+var metroCheck = true;
 
 var runMetronome = function(){
-  var work = document.getElementsByClassName("number");
-  var metroSpeed = Number(work[0].innerHTML);
-  console.log(typeof metroSpeed);
-  blink = setInterval(pulse, 1000);
+  
+  if (metroCheck){
+    var work = document.getElementsByClassName("number");
+  
+    // in beats per minute
+    var metroSpeed = Number(work[0].innerHTML);
+
+    // in beats per second
+    metroSpeed = metroSpeed / 60;
+
+    metroSpeed = 1 / metroSpeed;
+    metroSpeed = 1000 * metroSpeed;
+
+    blink = setInterval(pulse, metroSpeed);
+    metroCheck = false;
+  }
 }
 
 var stopMetronome = function(){
   clearInterval(blink);
+  metroCheck = true;
 }
