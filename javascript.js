@@ -10,11 +10,13 @@ var decrement = function(){
   work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 1, 1);
 }
 
+// adds class to div to simulate blink of metronome
 var addFlash = function(){
   var work = document.getElementsByClassName("flashingLight");
   work[0].classList.add("darkened");
 }
 
+// takes class away from div to make div blank
 var takeFlash = function(){
   var work = document.getElementsByClassName("flashingLight");
   work[0].className = work[0].className.replace(/\bdarkened\b/,'');
