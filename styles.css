@@ -1,0 +1,22 @@
+.userInterface {
+  width: 300px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  margin: -50px 0 0 -150px;
+  background-color: orange;
+}
+
+.flashingLight {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -25px 0 0 -25px;
+}
+
+.darkened {
+  background-color: black;
+}
