@@ -1,8 +1,10 @@
+// increases the speed of the metronome
 var increment = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Number(work[0].innerHTML) + 1;
 }
 
+// decreases the speed of the metronome
 var decrement = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 1, 1);
