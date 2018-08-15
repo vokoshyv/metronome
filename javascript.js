@@ -3,7 +3,6 @@ var increment = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Number(work[0].innerHTML) + 1;
   stopMetronome();
-  runMetronome();
 }
 
 // decreases the speed of the metronome
@@ -11,7 +10,6 @@ var decrement = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 1, 1);
   stopMetronome();
-  runMetronome();
 }
 
 
@@ -29,7 +27,7 @@ var takeFlash = function(){
   work[0].className = work[0].className.replace(/\bdarkened\b/,'');
 }
 
-// 
+//
 var pulse = function(){
   addFlash();
   window.setTimeout(takeFlash, 100);
@@ -39,10 +37,10 @@ var blink;
 var metroCheck = true;
 
 var runMetronome = function(){
-  
+
   if (metroCheck){
     var work = document.getElementsByClassName("number");
-  
+
     // in beats per minute
     var metroSpeed = Number(work[0].innerHTML);
 
