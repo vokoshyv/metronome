@@ -43,6 +43,7 @@ button {
     width: 10vh;
     border: none;
     padding: 5px 10px;
+    background-color: white;
 }
 
 button:hover {
@@ -65,5 +66,5 @@ button:hover {
 
 .darkened {
   background-color: black;
-  margin-left: 50%;
+  margin-left: 52%;
 }
