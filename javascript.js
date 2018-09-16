@@ -5,11 +5,23 @@ var increment = function(){
   stopMetronome();
 }
 
+var plusFive = function(){
+    var work = document.getElementsByClassName("number");
+    work[0].innerHTML = Number(work[0].innerHTML) + 5;
+    stopMetronome();
+}
+
 // decreases the speed of the metronome
 var decrement = function(){
   var work = document.getElementsByClassName("number");
   work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 1, 1);
   stopMetronome();
+}
+
+var minusFive = function(){
+    var work = document.getElementsByClassName("number");
+    work[0].innerHTML = Math.max(Number(work[0].innerHTML) - 5, 1);
+    stopMetronome();
 }
 
 
@@ -58,4 +70,10 @@ var runMetronome = function(){
 var stopMetronome = function(){
   clearInterval(blink);
   metroCheck = true;
+}
+
+var reset = function(){
+    var work = document.getElementsByClassName("number");
+    work[0].innerHTML = 60;
+    stopMetronome();
 }
