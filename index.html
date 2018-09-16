@@ -9,21 +9,26 @@
   </head>
 
   <body>
+    <header class="title">Metronome</header>
+    <div class="container">
+        <div class="flashingLight"></div>
 
-    <div class="flashingLight"></div>
+        <div class="userInterface">
 
-    <div class="userInterface">
+            <p class="number">60</p>
+            <p class="units">BPM</p>
 
-      <p class="number">60</p>
-      <p class="units">BPM</p>
+            <button onclick="minusFive()">-5</button>
+            <button onclick="decrement()">-</button>
 
-      <button onclick="increment()">Increment</button>
-
-      <button onclick="decrement()">Decrement</button>
-      <br>
-      <br>
-      <button onclick="runMetronome()">Start</button>
-      <button onclick="stopMetronome()">Stop</button>
+            <button onclick="increment()">+</button>
+            <button onclick="plusFive()">+5</button>
+            <br>
+            <br>
+            <button onclick="runMetronome()">Start</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="stopMetronome()">Stop</button>
+        </div>
     </div>
 
 
